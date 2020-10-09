@@ -15,5 +15,7 @@ if __name__ == '__main__':
 	Data = readFile(dataDir)
 	Data = Data.astype(float)
 	Data = Data[3:17,:].T
-	exportMatrix(Data, "Data.txt")
-	visualFile(Data)
+	# exportMatrix(Data, "Data.txt")
+	visualFile(Data, fixAxes = False, name = "orignal")
+	rescontr = testPCA(Data)
+	visualFile(rescontr, fixAxes = False, name = "refined")
